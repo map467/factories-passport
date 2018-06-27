@@ -215,6 +215,7 @@ var FactoryComponent = /** @class */ (function () {
         this.socket.on('update', function () {
             _this.refreshFactoryList();
         });
+        this.refreshFactoryList();
         this.resetForm();
     };
     FactoryComponent.prototype.resetForm = function (rForm) {

@@ -58,6 +58,7 @@ export class FactoryComponent implements OnInit {
     this.socket.on('update', () =>{
       this.refreshFactoryList();
     });
+    this.refreshFactoryList();
 
     this.resetForm();
   }
