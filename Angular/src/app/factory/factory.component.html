@@ -1,0 +1,61 @@
+<div class= "row">
+  <div class="col s12">
+    <div class="card blue-grey darken-10">
+      <div class="card-content white-text">
+        <ul><h3>Root<span style="float:right;"> <a class="waves-effect waves-light btn modal-trigger" href="#modal1" >+</a></span></h3>
+          <br>
+          <ul *ngFor="let fac of factoryService.factories"data-role="treeview" >
+            <li><h5>{{fac.name}} <span style="float:right;"><a class="btn modal-trigger" href="#modal1" (click)="onEdit(fac)">edit</a>
+              <a class="waves-effect waves-light btn" (click)="onDelete(fac._id)">Delete</a>
+            </span> </h5></li>
+            {{fac.lower}}:{{fac.upper}}
+            <ul>
+              <li>{{fac.children[0]}}</li>
+              <li>{{fac.children[1]}}</li>
+              <li>{{fac.children[2]}}</li>
+              <li>{{fac.children[3]}}</li>
+              <li>{{fac.children[4]}}</li>
+              <li>{{fac.children[5]}}</li>
+              <li>{{fac.children[6]}}</li>
+              <li>{{fac.children[7]}}</li>
+              <li>{{fac.children[8]}}</li>
+              <li>{{fac.children[9]}}</li>
+              <li>{{fac.children[10]}}</li>
+              <li>{{fac.children[11]}}</li>
+              <li>{{fac.children[12]}}</li>
+              <li>{{fac.children[13]}}</li>
+              <li>{{fac.children[14]}}</li>
+              <li>{{fac.children[15]}}</li>
+            </ul>
+          </ul>
+        </ul> 
+</div>
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <form [formGroup]="rForm">
+      <div class="form-container">
+      <input  type="hidden" formControlName="_id"  [(ngModel)] = "this._id">        
+        <label>Factory Name
+          <input type="text" formControlName="name" [(ngModel)] = "this.name">
+        </label>
+        <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">This is required.</div>
+        <label>Lower Bound
+            <input type="number" formControlName="lower" [(ngModel)] = "this.lower">
+        </label>
+        <label>Upper Bound
+            <input type="number" formControlName="upper" [(ngModel)] = "this.upper">
+        </label>
+        <label>Number of Child Nodes
+            <input type="number" formControlName="children" [(ngModel)] = "this.children">
+        </label>
+        <div class="alert" *ngIf="!rForm.controls['children'].valid && rForm.controls['children'].touched">Must be between 1 and 15 inclusive.</div>
+
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <!-- <a href="#!" class="modal-close waves-effect waves-green btn-flat" (click)="onSubmit(factoryForm)" [disabled]="!bookForm.form.valid" >Submit</a> -->
+    <button class="modal-close waves-effect waves-green btn-flat" [disabled]="!rForm.valid" (click)="onSubmit(rForm)">Submit</button>
+    <button class="modal-close waves-effect waves-green btn-flat" (click)="onCancel(factoryForm)">Cancel</button>
+  </div>
+</div> 
