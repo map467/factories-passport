@@ -15,8 +15,8 @@ export class FactoryService {
   // private socket;
   // private url = 'http://localhost:3000';
 
-  // readonly baseURL = 'http://localhost:3000/factories';
-  readonly baseURL = 'http://factories-passport.herokuapp.com/factories';
+  readonly baseURL = 'http://localhost:3000/factories';
+  // readonly baseURL = 'http://factories-passport.herokuapp.com/factories';
   constructor(private http: HttpClient) { 
 
   }
