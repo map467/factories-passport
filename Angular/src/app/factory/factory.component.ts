@@ -54,7 +54,7 @@ export class FactoryComponent implements OnInit {
       var instances = M.Modal.init(elems, {dismissible : false});
     });
 
-    this.socket = io(this.url);
+    this.socket = io();
     this.socket.on('update', () =>{
       this.refreshFactoryList();
     });
@@ -80,7 +80,7 @@ export class FactoryComponent implements OnInit {
   onSubmit(form){
     if (form.value._id == null){      
       this.factoryService.postFactory(form.value).subscribe((res) => {
-        this.socket = io(this.url);
+        this.socket = io();
         this.socket.close();
         this.resetForm(form);
         this.refreshFactoryList();
@@ -90,7 +90,7 @@ export class FactoryComponent implements OnInit {
     }
     else{
       this.factoryService.putFactory(form.value).subscribe((res) => {
-        this.socket = io(this.url);
+        this.socket = io();
         this.socket.close();
         this.resetForm(form);
         this.refreshFactoryList();
@@ -124,7 +124,7 @@ export class FactoryComponent implements OnInit {
   onDelete(_id: string){
     if (confirm('Are you sure you want to delete this factory?') == true){
       this.factoryService.deleteFactory(_id).subscribe((res) => {
-        this.socket = io(this.url);
+        this.socket = io();
         this.socket.close();
         this.refreshFactoryList();
       });

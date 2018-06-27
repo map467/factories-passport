@@ -211,7 +211,7 @@ var FactoryComponent = /** @class */ (function () {
             var elems = document.querySelectorAll('.modal');
             var instances = M.Modal.init(elems, { dismissible: false });
         });
-        this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_2__(this.url);
+        this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_2__();
         this.socket.on('update', function () {
             _this.refreshFactoryList();
         });
@@ -233,7 +233,7 @@ var FactoryComponent = /** @class */ (function () {
         var _this = this;
         if (form.value._id == null) {
             this.factoryService.postFactory(form.value).subscribe(function (res) {
-                _this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_2__(_this.url);
+                _this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_2__();
                 _this.socket.close();
                 _this.resetForm(form);
                 _this.refreshFactoryList();
@@ -241,7 +241,7 @@ var FactoryComponent = /** @class */ (function () {
         }
         else {
             this.factoryService.putFactory(form.value).subscribe(function (res) {
-                _this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_2__(_this.url);
+                _this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_2__();
                 _this.socket.close();
                 _this.resetForm(form);
                 _this.refreshFactoryList();
@@ -269,7 +269,7 @@ var FactoryComponent = /** @class */ (function () {
         var _this = this;
         if (confirm('Are you sure you want to delete this factory?') == true) {
             this.factoryService.deleteFactory(_id).subscribe(function (res) {
-                _this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_2__(_this.url);
+                _this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_2__();
                 _this.socket.close();
                 _this.refreshFactoryList();
             });
