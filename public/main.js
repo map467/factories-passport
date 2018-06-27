@@ -190,7 +190,8 @@ var FactoryComponent = /** @class */ (function () {
     function FactoryComponent(factoryService, fb) {
         this.factoryService = factoryService;
         this.fb = fb;
-        this.url = 'http://localhost:3000/';
+        // private url = 'http://localhost:3000/';
+        this.url = 'http://factories-passport.herokuapp.com/';
         this._id = null;
         this.name = '';
         this.lower = null;
@@ -322,12 +323,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var FactoryService = /** @class */ (function () {
-    // readonly baseURL = '/factories';
     function FactoryService(http) {
         this.http = http;
         // private socket;
         // private url = 'http://localhost:3000';
-        this.baseURL = 'http://localhost:3000/factories';
+        // readonly baseURL = 'http://localhost:3000/factories';
+        this.baseURL = 'http://factories-passport.herokuapp.com/factories';
     }
     FactoryService.prototype.postFactory = function (fac) {
         return this.http.post(this.baseURL, fac);
