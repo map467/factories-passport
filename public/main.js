@@ -328,7 +328,7 @@ var FactoryService = /** @class */ (function () {
         // private socket;
         // private url = 'http://localhost:3000';
         // readonly baseURL = 'http://localhost:3000/factories';
-        this.baseURL = 'http://factories-passport.herokuapp.com/factories';
+        this.baseURL = '/factories';
     }
     FactoryService.prototype.postFactory = function (fac) {
         return this.http.post(this.baseURL, fac);

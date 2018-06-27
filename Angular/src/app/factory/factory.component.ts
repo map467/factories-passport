@@ -19,8 +19,8 @@ declare var M: any;
 export class FactoryComponent implements OnInit {
 
   private socket;
-  private url = 'http://localhost:3000/';
-  // private url = 'http://factories-passport.herokuapp.com/';
+  // private url = 'http://localhost:3000/';
+  private url = 'http://factories-passport.herokuapp.com/';
   rForm: FormGroup;
 
   
